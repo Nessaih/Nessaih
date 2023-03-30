@@ -1,0 +1,179 @@
+{
+
+    /************************************主题/外观*****************************************************/
+
+    "workbench.colorTheme": "Dracula",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.editorAssociations": {
+        "*.ui": "default",
+        "*.cpl": "default"
+    },
+
+
+    /************************************VScode*****************************************************/
+
+    // 设置命令行窗口最多缓存（显示）的字符数
+    "terminal.integrated.scrollback": 10000,
+    "explorer.confirmDelete": false,
+
+    "editor.accessibilitySupport": "off",
+
+    // 编辑器针对不同语言相关设置
+    // (1)选择C的默认格式化工具
+    // (2)输入一行后自动格式化
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools",
+        "editor.formatOnType": true
+    },
+    "[python]": {
+        "editor.defaultFormatter": null,
+        "editor.formatOnType": true
+    },
+
+
+    /************************************Python*****************************************************/
+
+    "python.defaultInterpreterPath": "D:\\ProgramFiles\\Python\\Python311\\python.exe",
+
+    "python.pipenvPath": "D:\\ProgramFiles\\Python\\Python311\\Scripts\\pip.exe",
+
+    // 关闭Python 代码格式检查
+    "python.linting.pylintEnabled": false, 
+
+    "python.linting.flake8Enabled": true,
+
+    // 设置单行最长字符限制
+    "python.linting.flake8Args": [
+        "--max-line-length=248"
+    ], 
+
+    // 设置python代码格式化工具
+    "python.formatting.provider": "yapf",
+
+    "python.analysis.packageIndexDepths": [
+        {
+            "name": "sklearn",
+            "depth": 2
+        },
+        {
+            "name": "matplotlib",
+            "depth": 2
+        },
+        {
+            "name": "scipy",
+            "depth": 2
+        },
+        {
+            "name": "django",
+            "depth": 2
+        }
+    ],
+    // Qt for Python
+    
+     //designer工具路径（界面设计）
+    "qtForPython.designer.path": "D:\\ProgramFiles\\Python\\Python311\\Scripts\\designer.exe",
+     //uic工具路径（ui文件（*.ui）转python文件）
+    "qtForPython.uic.path": "D:\\ProgramFiles\\Python\\Python311\\Scripts\\pyuic5.exe",
+     //rcc工具路径（资源文件（如图片）转ython文件）
+    "qtForPython.rcc.path": "D:\\ProgramFiles\\Python\\Python311\\Scripts\\pyrcc5.exe",
+    // 关闭修改ui文件后自动编译python文件
+    "qtForPython.uic.liveExecution.enabled": false,
+    "qtForPython.uic.options": [
+        "-o \"${fileDirname}${pathSeparator}${fileBasenameNoExtension}.py\""
+    ],
+    "qtForPython.rcc.options": [
+        "-o \"${fileDirname}${pathSeparator}${fileBasenameNoExtension}.py\""
+    ],
+
+
+    /************************************highlight*****************************************************/
+    // 说明：此插件可以高亮任何格式(扩展名)文件内容，高亮内容格式需要使用正则表达式自行配置
+    
+    // 文本被更改后，高亮刷新延时（延时越低，越消耗计算机资源，默认设置50）
+    "highlight.minDelay": 50,
+
+    // 设置每个正则表达式匹配的最多字符(避免错误的正则表达式匹配过多内容)
+    "highlight.maxMatches": 250,
+    
+    // 默认装饰器属性定义
+    "highlight.decorations": {
+        "rangeBehavior": 3
+    },
+    // 匹配字符串装饰器属性定义
+    "highlight.regexes": {
+        "(Begin|End)(.*)": {
+            "filterFileRegex": ".*.asc$",
+            "decorations": [
+                {
+                    "overviewRulerColor": "#ffcc00",
+                    "color": "#30b7ee",
+                    "fontWeight": "normal"
+                },
+                {
+                    "overviewRulerColor": "#ffcc00",
+                    "color": "#30b7ee",
+                    "fontWeight": "normal"
+                }
+            ]
+        }
+    },
+   
+    /************************************replacerules*****************************************************/
+    // 此插件可以在同一文件中，一次进行多次替换操作
+
+    //定义替换规则，开头字符串为规则名
+    "replacerules.rules": {
+        "U32": {
+            "find": "(\\W+)unsigned int(\\W+)",
+            "replace": "$1UINT32$2",
+        },
+        "U16": {
+            "find": "(\\W+)unsigned short(\\W+)",
+            "replace": "$1UINT16$2",
+        },
+        "U8": {
+            "find": "(\\W+)unsigned char(\\W+)",
+            "replace": "$1UINT8$2",
+        },
+        "I32": {
+            "find": "(\\W+)int(\\W+)",
+            "replace": "$1INT32$2",
+        },
+        "I16": {
+            "find": "(\\W+)short(\\W+)",
+            "replace": "$1INT16$2",
+        },
+        "I8": {
+            "find": "(\\W+)char(\\W+)",
+            "replace": "$1CHAR$2",
+        },
+        "VD": {
+            "find": "(\\W+)void(\\W+)",
+            "replace": "$1VOID$2",
+        },
+        "BL": {
+            "find": "(\\W+)bool(\\W+)",
+            "replace": "$1BOOL$2",
+        },
+        "PathSeparator": {
+            "find": "\\\\",
+            "replace": "/",
+        },
+    },
+
+    // 设置规则集，加入此集合的替换规则生效
+    "replacerules.rulesets": {
+        "Tbox type repalce": {
+            "rules": [
+                "U32",
+                "U16",
+                "U8",
+                "I32",
+                "I16",
+                "I8",
+                "VD",
+                "BL"
+            ]
+        }
+    }
+}
