@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="icon">
+        <file alias="app">icon/cat.png</file>
+        <file alias="menu-unselected">icon/spoint_000.svg</file>
+        <file alias="menu-selected">icon/spoint_256.svg</file>
+        <file alias="win-min">icon/win_min.svg</file>
+        <file alias="win-max">icon/win_max.svg</file>
+        <file alias="win-close">icon/win_close.svg</file>
+    </qresource>
+</RCC>

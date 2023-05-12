@@ -1,0 +1,1 @@
+pyinstaller  --upx-dir "D:\ProgramFiles\Python\Upx" main.spec
